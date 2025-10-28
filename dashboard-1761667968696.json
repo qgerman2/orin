@@ -5,8 +5,8 @@
     "name": "vlvPlrgnk",
     "namespace": "default",
     "uid": "Pcgq3BYyAS1oBc74OarnORlo5OOWSPakwWNVehiiGuoX",
-    "resourceVersion": "25",
-    "generation": 26,
+    "resourceVersion": "28",
+    "generation": 36,
     "creationTimestamp": "2025-10-27T15:31:18Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "3"
@@ -14,7 +14,7 @@
     "annotations": {
       "grafana.app/createdBy": "user:ef29ok6rv3pq8b",
       "grafana.app/updatedBy": "user:ef29ok6rv3pq8b",
-      "grafana.app/updatedTimestamp": "2025-10-28T14:27:37Z",
+      "grafana.app/updatedTimestamp": "2025-10-28T15:49:37Z",
       "grafana.app/saved-from-ui": "Grafana v12.2.0 (92f1fba9b4)"
     }
   },
@@ -41,183 +41,9 @@
       }
     ],
     "cursorSync": "Off",
-    "description": "Nvidia GPU Metrics based on the prometheus metrics from github.com/utkuozdemir/nvidia_gpu_exporter",
+    "description": "",
     "editable": true,
     "elements": {
-      "panel-14": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "af2bqhznkuq68a"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "exemplar": true,
-                        "expr": "nvidia_smi_gpu_info{uuid=\"$gpu\"}",
-                        "instant": true,
-                        "interval": "",
-                        "legendFormat": "{{driver_version}}"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "The version of the installed NVIDIA display driver. This is an alphanumeric string.",
-          "id": 14,
-          "links": [],
-          "title": "Driver Version",
-          "vizConfig": {
-            "group": "stat",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "decimals": 2,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      }
-                    ]
-                  },
-                  "unit": "none"
-                },
-                "overrides": []
-              },
-              "options": {
-                "colorMode": "value",
-                "graphMode": "none",
-                "justifyMode": "auto",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "last"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "showPercentChange": false,
-                "text": {},
-                "textMode": "name",
-                "wideLayout": true
-              }
-            },
-            "version": "12.2.0"
-          }
-        }
-      },
-      "panel-16": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "af2bqhznkuq68a"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "exemplar": true,
-                        "expr": "nvidia_smi_temperature_gpu{uuid=\"$gpu\"}",
-                        "interval": "",
-                        "legendFormat": "{{uuid}}"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Core GPU temperature. in degrees C.",
-          "id": 16,
-          "links": [],
-          "title": "Temperature",
-          "vizConfig": {
-            "group": "gauge",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "max": 100,
-                  "min": 0,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "#EAB839",
-                        "value": 70
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "celsius"
-                },
-                "overrides": []
-              },
-              "options": {
-                "minVizHeight": 75,
-                "minVizWidth": 75,
-                "orientation": "auto",
-                "reduceOptions": {
-                  "calcs": [
-                    "last"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "showThresholdLabels": false,
-                "showThresholdMarkers": true,
-                "sizing": "auto",
-                "text": {}
-              }
-            },
-            "version": "12.2.0"
-          }
-        }
-      },
       "panel-23": {
         "kind": "Panel",
         "spec": {
@@ -255,181 +81,7 @@
           "description": "The official product name of the GPU. This is an alphanumeric string. For all products.",
           "id": 23,
           "links": [],
-          "title": "Name",
-          "vizConfig": {
-            "group": "stat",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "decimals": 2,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      }
-                    ]
-                  },
-                  "unit": "none"
-                },
-                "overrides": []
-              },
-              "options": {
-                "colorMode": "value",
-                "graphMode": "none",
-                "justifyMode": "auto",
-                "orientation": "auto",
-                "percentChangeColorMode": "standard",
-                "reduceOptions": {
-                  "calcs": [
-                    "last"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "showPercentChange": false,
-                "text": {},
-                "textMode": "name",
-                "wideLayout": true
-              }
-            },
-            "version": "12.2.0"
-          }
-        }
-      },
-      "panel-25": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "af2bqhznkuq68a"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "exemplar": true,
-                        "expr": "nvidia_smi_memory_used_bytes{uuid=\"$gpu\"} / nvidia_smi_memory_total_bytes{uuid=\"$gpu\"}",
-                        "interval": "",
-                        "legendFormat": ""
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Total memory allocated by active contexts / Total installed GPU memory.",
-          "id": 25,
-          "links": [],
-          "title": "Memory Allocation %",
-          "vizConfig": {
-            "group": "gauge",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "max": 1,
-                  "min": 0,
-                  "thresholds": {
-                    "mode": "percentage",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "#EAB839",
-                        "value": 70
-                      },
-                      {
-                        "color": "red",
-                        "value": 90
-                      }
-                    ]
-                  },
-                  "unit": "percentunit"
-                },
-                "overrides": []
-              },
-              "options": {
-                "minVizHeight": 75,
-                "minVizWidth": 75,
-                "orientation": "auto",
-                "reduceOptions": {
-                  "calcs": [
-                    "last"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "showThresholdLabels": false,
-                "showThresholdMarkers": true,
-                "sizing": "auto",
-                "text": {}
-              }
-            },
-            "version": "12.2.0"
-          }
-        }
-      },
-      "panel-34": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "af2bqhznkuq68a"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "exemplar": true,
-                        "expr": "nvidia_smi_gpu_info{uuid=\"$gpu\"}",
-                        "instant": true,
-                        "interval": "",
-                        "legendFormat": "{{vbios_version}}"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "The BIOS of the GPU board.",
-          "id": 34,
-          "links": [],
-          "title": "Vbios Version",
+          "title": "GPU",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
@@ -1063,14 +715,14 @@
                       "tooltip": false,
                       "viz": false
                     },
-                    "insertNulls": 10000,
+                    "insertNulls": 3600000,
                     "lineInterpolation": "linear",
                     "lineWidth": 1,
                     "pointSize": 5,
                     "scaleDistribution": {
                       "type": "linear"
                     },
-                    "showPoints": "never",
+                    "showPoints": "auto",
                     "showValues": false,
                     "spanNulls": false,
                     "stacking": {
@@ -1828,6 +1480,199 @@
           }
         }
       },
+      "panel-44": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af2bqhznkuq68a"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "exemplar": false,
+                        "expr": "(1 - avg(irate(node_cpu_seconds_total{mode=\"idle\"}[10m])) by (instance)) * 100",
+                        "instant": true,
+                        "legendFormat": "__auto",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 44,
+          "links": [],
+          "title": "CPU Usage",
+          "vizConfig": {
+            "group": "gauge",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "percent"
+                },
+                "overrides": []
+              },
+              "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+              }
+            },
+            "version": "12.2.0"
+          }
+        }
+      },
+      "panel-45": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "af2bqhznkuq68a"
+                      },
+                      "group": "loki",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "builder",
+                        "exemplar": false,
+                        "expr": "node_cpu_info",
+                        "format": "table",
+                        "instant": true,
+                        "legendFormat": "__auto",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "kind": "labelsToFields",
+                  "spec": {
+                    "id": "labelsToFields",
+                    "options": {}
+                  }
+                },
+                {
+                  "kind": "filterFieldsByName",
+                  "spec": {
+                    "id": "filterFieldsByName",
+                    "options": {
+                      "include": {
+                        "names": [
+                          "model_name"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 45,
+          "links": [],
+          "title": "CPU",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/.*/",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              }
+            },
+            "version": "12.2.0"
+          }
+        }
+      },
       "panel-6": {
         "kind": "Panel",
         "spec": {
@@ -1864,7 +1709,7 @@
           "description": "Percent of time over the past sample period during which one or more kernels was executing on the GPU.\nThe sample period may be between 1 second and 1/6 second depending on the product.",
           "id": 6,
           "links": [],
-          "title": "GPU Utilization %",
+          "title": "GPU Usage",
           "vizConfig": {
             "group": "gauge",
             "kind": "VizConfig",
@@ -1930,7 +1775,7 @@
                 "kind": "ElementReference",
                 "name": "panel-23"
               },
-              "height": 3,
+              "height": 2,
               "width": 6,
               "x": 0,
               "y": 0
@@ -1941,35 +1786,9 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-6"
+                "name": "panel-44"
               },
-              "height": 5,
-              "width": 3,
-              "x": 6,
-              "y": 0
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-25"
-              },
-              "height": 5,
-              "width": 3,
-              "x": 9,
-              "y": 0
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-16"
-              },
-              "height": 5,
+              "height": 4,
               "width": 3,
               "x": 12,
               "y": 0
@@ -1980,12 +1799,12 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-14"
+                "name": "panel-6"
               },
-              "height": 2,
+              "height": 4,
               "width": 3,
-              "x": 0,
-              "y": 3
+              "x": 15,
+              "y": 0
             }
           },
           {
@@ -1993,12 +1812,12 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-34"
+                "name": "panel-45"
               },
               "height": 2,
-              "width": 3,
-              "x": 3,
-              "y": 3
+              "width": 6,
+              "x": 0,
+              "y": 2
             }
           },
           {
@@ -2011,7 +1830,7 @@
               "height": 8,
               "width": 12,
               "x": 0,
-              "y": 5
+              "y": 4
             }
           },
           {
@@ -2024,7 +1843,7 @@
               "height": 8,
               "width": 12,
               "x": 12,
-              "y": 5
+              "y": 4
             }
           },
           {
@@ -2037,7 +1856,7 @@
               "height": 8,
               "width": 12,
               "x": 0,
-              "y": 13
+              "y": 12
             }
           },
           {
@@ -2050,7 +1869,7 @@
               "height": 8,
               "width": 12,
               "x": 12,
-              "y": 13
+              "y": 12
             }
           },
           {
@@ -2063,7 +1882,7 @@
               "height": 8,
               "width": 12,
               "x": 0,
-              "y": 21
+              "y": 20
             }
           },
           {
@@ -2076,7 +1895,7 @@
               "height": 8,
               "width": 12,
               "x": 12,
-              "y": 21
+              "y": 20
             }
           },
           {
@@ -2089,7 +1908,7 @@
               "height": 8,
               "width": 12,
               "x": 0,
-              "y": 29
+              "y": 28
             }
           },
           {
@@ -2102,7 +1921,7 @@
               "height": 8,
               "width": 12,
               "x": 12,
-              "y": 29
+              "y": 28
             }
           }
         ]
@@ -2132,12 +1951,12 @@
         "1d"
       ],
       "fiscalYearStartMonth": 0,
-      "from": "now-2m",
+      "from": "now-5m",
       "hideTimepicker": false,
       "timezone": "",
       "to": "now"
     },
-    "title": "Nvidia GPU Metrics",
+    "title": "Overview",
     "variables": [
       {
         "kind": "QueryVariable",
