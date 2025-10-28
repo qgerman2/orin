@@ -1,3 +1,10 @@
+loki
+alloy
+
+prometheus
+nvidia-gpu-exporter
+node-exporter
+
 edit loki service
 
 ```
