@@ -5,8 +5,8 @@
     "name": "vlvPlrgnk",
     "namespace": "default",
     "uid": "Pcgq3BYyAS1oBc74OarnORlo5OOWSPakwWNVehiiGuoX",
-    "resourceVersion": "28",
-    "generation": 36,
+    "resourceVersion": "36",
+    "generation": 40,
     "creationTimestamp": "2025-10-27T15:31:18Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "3"
@@ -14,7 +14,7 @@
     "annotations": {
       "grafana.app/createdBy": "user:ef29ok6rv3pq8b",
       "grafana.app/updatedBy": "user:ef29ok6rv3pq8b",
-      "grafana.app/updatedTimestamp": "2025-10-28T15:49:37Z",
+      "grafana.app/updatedTimestamp": "2025-10-28T16:12:13Z",
       "grafana.app/saved-from-ui": "Grafana v12.2.0 (92f1fba9b4)"
     }
   },
@@ -41,7 +41,6 @@
       }
     ],
     "cursorSync": "Off",
-    "description": "",
     "editable": true,
     "elements": {
       "panel-23": {
@@ -119,7 +118,9 @@
                   "values": false
                 },
                 "showPercentChange": false,
-                "text": {},
+                "text": {
+                  "valueSize": 20
+                },
                 "textMode": "name",
                 "wideLayout": true
               }
@@ -1665,6 +1666,9 @@
                   "values": false
                 },
                 "showPercentChange": false,
+                "text": {
+                  "valueSize": 20
+                },
                 "textMode": "auto",
                 "wideLayout": true
               }
@@ -1773,11 +1777,24 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
+                "name": "panel-6"
+              },
+              "height": 4,
+              "width": 3,
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
                 "name": "panel-23"
               },
-              "height": 2,
-              "width": 6,
-              "x": 0,
+              "height": 4,
+              "width": 9,
+              "x": 3,
               "y": 0
             }
           },
@@ -1799,25 +1816,12 @@
             "spec": {
               "element": {
                 "kind": "ElementReference",
-                "name": "panel-6"
-              },
-              "height": 4,
-              "width": 3,
-              "x": 15,
-              "y": 0
-            }
-          },
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
                 "name": "panel-45"
               },
-              "height": 2,
-              "width": 6,
-              "x": 0,
-              "y": 2
+              "height": 4,
+              "width": 9,
+              "x": 15,
+              "y": 0
             }
           },
           {
@@ -1956,7 +1960,7 @@
       "timezone": "",
       "to": "now"
     },
-    "title": "Overview",
+    "title": "Post-Quantum Cryptography benchmark",
     "variables": [
       {
         "kind": "QueryVariable",
