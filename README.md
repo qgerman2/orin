@@ -1,0 +1,35 @@
+edit loki service
+
+```
+[asd@msi orin]$ sudo cat /usr/lib/systemd/system/loki.service
+[Unit]
+Description=Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system
+Documentation=https://grafana.com/docs/loki/latest/
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/loki -boltdb.dir /var/lib/loki/index -local.chunk-directory /var/lib/loki/chunks -config.file /etc/loki/loki.yaml
+TimeoutStopSec=30s
+User=loki
+Restart=always
+RestartSec=10
+
+NoNewPrivileges=true
+MemoryDenyWriteExecute=true
+RestrictRealtime=true
+
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/loki
+PrivateTmp=true
+
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target
+```
