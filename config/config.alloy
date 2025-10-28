@@ -1,0 +1,24 @@
+logging {
+  level = "warn"
+}
+
+loki.source.journal "cg_accel" {
+  forward_to = [loki.write.endpoint.receiver]
+  matches    = "_SYSTEMD_UNIT=cg_accel.service"
+}
+
+loki.source.journal "cuda" {
+  forward_to = [loki.write.endpoint.receiver]
+  matches    = "_SYSTEMD_UNIT=cuda-pqc.service"
+}
+
+loki.source.journal "openssl" {
+  forward_to = [loki.write.endpoint.receiver]
+  matches    = "_SYSTEMD_UNIT=openssl-pqc.service"
+}
+
+loki.write "endpoint" {
+  endpoint {
+    url = "http://127.0.0.1:3100/loki/api/v1/push"
+  }
+}

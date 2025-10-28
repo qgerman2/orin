@@ -1,0 +1,10 @@
+[Unit]
+Description=cuda-pqc script
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+ExecStart=stdbuf -oL -eL ./home/asd/cuda/script/src/build/v3
+
+[Install]
+WantedBy=multi-user.target

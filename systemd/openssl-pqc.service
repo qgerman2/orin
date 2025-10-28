@@ -1,0 +1,10 @@
+[Unit]
+Description=openssl-pqc script
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+ExecStart=stdbuf -oL -eL python3 /home/asd/openssl/openssl-pqc.py
+
+[Install]
+WantedBy=multi-user.target
